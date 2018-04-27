@@ -1,0 +1,51 @@
+# Project: LaserGame
+# Makefile created by Dev-C++ 4.9.9.2
+
+CPP  = g++.exe -D__DEBUG__
+CC   = gcc.exe -D__DEBUG__
+WINDRES = windres.exe
+RES  = 
+OBJ  = main.o Gfx.o Map.o Actor.o Input.o Layer.o HUD.o Math.o $(RES)
+LINKOBJ  = main.o Gfx.o Map.o Actor.o Input.o Layer.o HUD.o Math.o $(RES)
+LIBS =  -L"C:/Dev-Cpp/lib" -mwindows -lopengl32 -lglu32  -lgmon -pg  -g3 
+INCS =  -I"C:/Dev-Cpp/include" 
+CXXINCS =  -I"C:/Dev-Cpp/lib/gcc/mingw32/3.4.2/include"  -I"C:/Dev-Cpp/include/c++/3.4.2/backward"  -I"C:/Dev-Cpp/include/c++/3.4.2/mingw32"  -I"C:/Dev-Cpp/include/c++/3.4.2"  -I"C:/Dev-Cpp/include" 
+BIN  = LaserGame.exe
+CXXFLAGS = $(CXXINCS)    -O -Wuninitialized -O3 -pg -g3
+CFLAGS = $(INCS)    -O -Wuninitialized -O3 -pg -g3
+RM = rm -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before LaserGame.exe all-after
+
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o "LaserGame.exe" $(LIBS)
+
+main.o: main.cpp
+	$(CPP) -c main.cpp -o main.o $(CXXFLAGS)
+
+Gfx.o: Gfx.cpp
+	$(CPP) -c Gfx.cpp -o Gfx.o $(CXXFLAGS)
+
+Map.o: Map.cpp
+	$(CPP) -c Map.cpp -o Map.o $(CXXFLAGS)
+
+Actor.o: Actor.cpp
+	$(CPP) -c Actor.cpp -o Actor.o $(CXXFLAGS)
+
+Input.o: Input.cpp
+	$(CPP) -c Input.cpp -o Input.o $(CXXFLAGS)
+
+Layer.o: Layer.cpp
+	$(CPP) -c Layer.cpp -o Layer.o $(CXXFLAGS)
+
+HUD.o: HUD.cpp
+	$(CPP) -c HUD.cpp -o HUD.o $(CXXFLAGS)
+
+Math.o: Math.cpp
+	$(CPP) -c Math.cpp -o Math.o $(CXXFLAGS)

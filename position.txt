@@ -1,0 +1,3 @@
+Line = 1
+MousePPointer = 0 9
+Actor position 416 384
