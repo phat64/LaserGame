@@ -1,3 +1,3 @@
 # LaserGame
-2d Occlusion algorithm
+2d occlusion algorithm
 (date : end 2007)
